@@ -42,11 +42,11 @@ n0=10^9; (*Συχνότητα Larmor σε Hz*)
 Out[131]= 1000000000
 f=765000; (*Field Frequency in Hz*)
 Out[132]= 765000
-n1=Function[x,n0*Exp[-Em[x]/(kB*T)]]; (*Transition Probability Rate from θ1 to θ2 in Hz*)
+n1=Function[x,n0*Exp[-Em[x]/(kB*T)]]; (*Transition Probability Rate from θ2 to θ1 in Hz*)
 Out[133]= Function[x,n0 Exp[-(Em[x]/(kB T))]]
 
 Function[x,n0 Exp[-(Em[x]/(k T))]]
-n2=Function[x,n0*Exp[-Ep[x]/(kB*T)]]; (*Transition Probability Rate from θ2 to θ1 in Hz*)
+n2=Function[x,n0*Exp[-Ep[x]/(kB*T)]]; (*Transition Probability Rate from θ1 to θ2 in Hz*)
 Out[135]= Function[x,n0 Exp[-(Ep[x]/(kB T))]]
 s1=NDSolve[{y'[x]==(2*Ms*(n1[x]-((n1[x]+n2[x])/2)*((y[x]/Ms)+1)))/(4*f*H0),y[0]==0},y,{x,0,H0}] 
 (*Solution of the Magnetization Differential Equation*)
